@@ -6,11 +6,12 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.innerText = password;
 
 }
 
 function generatePassword() {
+  var length = prompt("Please pick a length at least 8 characters and no more than 128 characters.");
   var str = charOptions(charTypes());
   var newPassword = [];
   var splitStr = str.split("");
@@ -40,7 +41,6 @@ function generatePassword() {
 
 // This functions stores the User's Input
 function charTypes() {
-  var length = prompt("Please pick a length at least 8 characters and no more than 128 characters.");
   var lowerCase = prompt("If you would like to included lowercase characters, type YES");
   var upperCase = prompt("If you would like to included uppercase characters, type YES");
   var numbers = prompt("If you would like to included numeric characters, type YES");
@@ -48,7 +48,6 @@ function charTypes() {
     
   // object that stores the character possiblities
   var charChoices = {
-    length: this.length,
     lowerCase: false,
     upperCase: false, 
     numbers: false,
@@ -72,6 +71,7 @@ function charTypes() {
     charChoices.specialChars = true;
   } 
   
+  console.log(charChoices);
   return charChoices;
 }
 
@@ -90,7 +90,6 @@ function charOptions (charObj) {
   return possibleChars;
 }
 
-
 // Add event listener to generate button
-generateBtn.addEventListener("click");
+generateBtn.addEventListener("click", writePassword());
 
