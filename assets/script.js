@@ -54,20 +54,27 @@ function charTypes() {
     specialChars: false
   }
 
+  // this makes all the user prompt uppercase
+  var promptInputs = [lowerCase, upperCase, numbers, specialChars];
+  var allUpperInput = [];
+  promptInputs.forEach(x => {
+    allUpperInput.push(x.toUpperCase())
+  }); 
+
   // if user prompt value is YES, change the value to true 
-  if (lowerCase === "YES") {
+  if (allUpperInput[0] === "YES") {
     charChoices.lowerCase = true;
   } 
   /// if user prompt value is YES, change the value to true 
-  if (upperCase === "YES") {
+  if (allUpperInput[1] === "YES") {
     charChoices.upperCase = true;
   } 
   // if user prompt value is YES, change the value to true 
-  if (numbers === "YES") {
+  if (allUpperInput[2] === "YES") {
     charChoices.numbers = true;
   } 
   // if user prompt value is YES, change the value to true 
-  if (specialChars === "YES") {
+  if (allUpperInput[3] === "YES") {
     charChoices.specialChars = true;
   } 
   
