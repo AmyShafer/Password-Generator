@@ -5,7 +5,7 @@ This is a Password Generator. It creates a unique and secure password based on a
 
 This project was built upon from existing code. The present HTML and CSS code is nearly-identical to the code originally provided. Colors and font-families have changed but sizing and positioning were untouched.
 
-Some JavaScript was given at the start of the project. Over 80 lines of original code were added.
+Some JavaScript was given at the start of the project. Over 50 lines of original code were added.
 
 ## Table of contents
 * [Technologies](#technologies)
@@ -23,7 +23,7 @@ Users do not need setup.
 
 The following image shows the website is action!
 
-<img src="./assets/passwordGenerator.jpeg"/>
+<img src="assets/passwordGenerator.jpeg" width="550" height="315" alt="password generator"/>
 
 ## Resources-used
 
@@ -40,11 +40,8 @@ The following image shows the website is action!
 
 ## Future-improvements
 
-The application's randomizer could be more...random. Even the the different characters types are random, the types are clustered. In another words, typically all the lowercase letters seems to be together, all the uppercase together, and so on.
+This application can be improved by offering the user a checkbox input instead of prompt. JavaScript's prompt display has several drawbacks. From the user's point of view, they may not realize they entered a typo. Think of all the times you were sure your typed you password correctly! 
 
-Presently, the applications validation testing is not fully functional. For instance, even though the application is able to test is the user enter a valid password length, the new password length is not update.
-
-Similarly, even though the application is able to test whether or not the user did not enter any of the needed character selections, the code that follows is broken. 
-
+For learning purposes, prompt fit in well with this lesson. I look forward to personalizing this project with my own design ideas. I will have more examples to draw inspiration from as the class dives deeper into practical event options. 
 
 

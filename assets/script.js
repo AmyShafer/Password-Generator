@@ -5,14 +5,14 @@ function generatePassword() {
   var length = prompt("Please pick a length of least 8 characters and no more than 128 characters.");
   var str = "";
 
-  if (length > 7 && length < 138) {
+  // length validation
+  if (length < 8 || length > 128) {
+    var valLength = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
     var response = userAnswerArray(userAnswersPrompts());
-    str = charOptions(response, length);  
+    str = charOptions(response, valLength); 
   } else {
-    //generatePassword();
-    var length = prompt("Please pick a length of least 8 characters and no more than 128 characters.");
     var response = userAnswerArray(userAnswersPrompts());
-    str = charOptions(response, length);  
+    str = charOptions(response, length); 
   }
 
   return str;
@@ -26,7 +26,7 @@ function userAnswersPrompts() {
     numbers: prompt("If you would like to included numeric characters, type Y"),
     specialChars: prompt("If you would like to included special characters, type Y")
   }
-
+ 
   return userInput;
 }
 
@@ -38,6 +38,12 @@ function userAnswerArray(userInputObj) {
   Object.values(userInputObj).forEach(x => {
     upperCaseInput.push(x.toUpperCase());
   });
+
+  // checks if the user selected a character type
+  if (!upperCaseInput.includes("Y")) {
+    confirm("Please select at least one character type.");
+    upperCaseInput = userAnswerArray(userAnswersPrompts());
+  }
 
   return upperCaseInput;
 }
@@ -54,6 +60,7 @@ function charOptions(userAnswerArray, passwordLength) {
     }
   });
 
+  // randomizes based on the user's selection
   for (var i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * possibleChars.length);
     finalCharOptions += possibleChars[randomIndex]
@@ -71,4 +78,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
+generateBtn.addEventListener("click", writePassword);
