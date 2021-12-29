@@ -12,6 +12,9 @@ Some JavaScript was given at the start of the project. Over 50 lines of original
 * [Mockup](#mockup)
 * [Resources-used](#resources-used)
 * [Possible-improvements](#possible-improvements)
+* [Github-url](#github-url)
+* [Deployed-url](#deployed-url)
+
 
 ## Technologies
 
@@ -44,4 +47,9 @@ This application can be improved by offering the user a checkbox input instead o
 
 For learning purposes, prompt fit in well with this lesson. I look forward to personalizing this project with my own design ideas. I will have more examples to draw inspiration from as the class dives deeper into practical event options. 
 
+## Github-url
+<a href="https://github.com/AmyShafer/Password-Generator" target="_blank_">Password Generator Repository</a> 
+
+## Deployed-url
+<a href="https://amyshafer.github.io/Password-Generator/" target="_blank_">Password Generator Deployment URL</a> 
 
