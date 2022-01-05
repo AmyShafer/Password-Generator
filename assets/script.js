@@ -6,12 +6,16 @@ function generatePassword() {
   var str = "";
 
   // length validation
-  if (length < 8 || length > 128) {
-    var valLength = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
+  if (length >= 8 && length <= 128) {
     var response = userAnswerArray(userAnswersPrompts());
-    str = charOptions(response, valLength); 
+    str = charOptions(response, length); 
   } else {
-    var response = userAnswerArray(userAnswersPrompts());
+    //var valLength = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
+    while (length < 8 || length > 128) {
+      alert("Please type in a valid response.");
+      length = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
+    }
+    response = userAnswerArray(userAnswersPrompts());
     str = charOptions(response, length); 
   }
 
@@ -32,7 +36,6 @@ function userAnswersPrompts() {
 
 // This function turns the user prompts into an array
 function userAnswerArray(userInputObj) {
-
   var upperCaseInput = [];
 
   Object.values(userInputObj).forEach(x => {
@@ -54,8 +57,8 @@ function charOptions(userAnswerArray, passwordLength) {
   var possibleChars = "";
   var finalCharOptions = "";
 
-  userAnswerArray.forEach((x, i) => {
-    if (x === "Y") {
+  userAnswerArray.forEach((letter, i) => {
+    if (letter === "Y") {
       possibleChars += charArr[i];
     }
   });
