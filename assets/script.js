@@ -10,7 +10,6 @@ function generatePassword() {
     var response = userAnswerArray(userAnswersPrompts());
     str = charOptions(response, length); 
   } else {
-    //var valLength = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
     while (length < 8 || length > 128) {
       alert("Please type in a valid response.");
       length = prompt("Please enter a valid password length. A valid password length is a number between 8 and 128.");
